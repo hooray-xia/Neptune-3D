@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      #3D-background {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="3D-background"></div>
+
+    <script type="importmap">
+       {
+            "imports": {
+                "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.180.0/three.module.min.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+      //Copied from my Three.js Template on Khan Academy
+      //Code structure influenced by DebugRanger
+    //{
+        import * as THREE from "three";
+        
+        var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+		camera.position.z = 500;
+		var renderer = new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: true});
+		renderer.setSize(window.innerWidth, window.innerHeight);
+
+        var light = new THREE.AmbientLight('white', 0.8);
+        scene.add(light);
+
+		document.body.appendChild(renderer.domElement);
+	//} Scene setup
+	
+	//{
+	    
+	//} Variables
+	
+	//{
+	//} Things to draw
+	
+	//{
+      //KA required code
+	    cancelAnimationFrame(window.parent.raf);
+	    
+	    function animate() {
+	        window.parent.raf = requestAnimationFrame(animate);
+	        
+	        //Other animations
+	        mesh.rotation.x += 0.01;
+	        mesh.rotation.y += 0.01;
+	        
+	        renderer.render(scene, camera);
+	    }
+	    
+	    animate();
+	//} Animation
+      
+    </script>
+  </body>
+</html>
