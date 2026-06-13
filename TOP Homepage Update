@@ -6,8 +6,8 @@ Welcome to Team Omega Primes, the ultimate team!
 
 New rule!
  If you want to make an official HTML Omega Primes project, you have to add the Omega Seal. Find out how to in our CSS code!
-  
-  <div class="omega">Ω</div>
+ 
+ <div class="omega">Ω</div>
 
 TO-DO:
 - ProcessingJS project (Ocean before time!)
@@ -279,25 +279,6 @@ Parts of the homepage were inspired by CodeX and Scriptara.
 
 		.state--sent {
 			display: none;
-		}
-
-		.member-github-tag {
-			display: inline-block;
-			margin-top: 4px;
-			padding: 2px 8px;
-			background: rgba(25, 118, 210, 0.2);
-			border: 1px solid rgba(66, 165, 245, 0.4);
-			border-radius: 4px;
-			color: rgba(144, 202, 249, 1);
-			font-size: 0.7em;
-			text-decoration: none;
-			transition: all 0.3s ease;
-		}
-
-		.member-github-tag:hover {
-			background: rgba(25, 118, 210, 0.3);
-			border-color: rgba(66, 165, 245, 0.6);
-			box-shadow: 0 0 8px rgba(66, 165, 245, 0.4);
 		}
 	</style><!--Join btn styling. Credit to Rain-->
 	<style>
@@ -1017,91 +998,1941 @@ Parts of the homepage were inspired by CodeX and Scriptara.
 		#background-switcher:hover .theme-emoji {
 			color: rgba(255, 255, 255, 1);
 			text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(230, 250, 255, 0.88);
+			transform: translateY(-1px) scale(1.08);
 		}
-	</style>
+
+		#background-switcher:active {
+			transform: translateY(0) scale(0.98);
+			box-shadow: 0 0 16px rgba(120, 220, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1);
+		}
+
+		#background-switcher:focus-visible {
+			outline: none;
+			border-color: rgba(200, 248, 255, 0.95);
+			box-shadow: 0 0 0 3px rgba(180, 240, 255, 0.28), 0 0 24px rgba(145, 230, 255, 0.65);
+		}
+
+		#myButton {
+			min-width: 150px;
+			width: auto;
+			max-width: none;
+		}
+
+		#myButton:hover {
+			max-width: none;
+		}
+
+		.menu {
+			display: grid;
+			grid-template-columns: repeat(3, 120px);
+			justify-content: center;
+			gap: 15px;
+			margin: 30px auto;
+			max-width: 420px;
+			z-index: 10;
+		}
+
+		.menu a {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 12px 12px;
+			border-radius: 18px;
+			background: linear-gradient(135deg, rgba(0, 29, 74, 1) 0%, rgba(0, 59, 122, 1) 50%, rgba(0, 170, 255, 1) 100%);
+			background-size: 200% auto;
+			color: rgba(224, 251, 255, 1);
+			font-family: 'Orbitron', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+			font-weight: bold;
+			text-decoration: none;
+			text-align: center;
+			transition: all 0.5s ease;
+			box-shadow: 0 0 12px rgba(0, 240, 255, 1), 0 0 24px rgba(0, 85, 255, 1);
+			border: 1px solid rgba(0, 200, 255, 0.35);
+			width: auto;
+			inline-size: 120px;
+			box-sizing: border-box;
+			font-size: 0.9rem;
+			min-height: 46px;
+			line-height: 1.2;
+		}
+
+		.menu a:hover {
+			filter: hue-rotate(10deg) brightness(1.05);
+			transform: translateY(-1px) scale(1.08);
+			box-shadow: 0 0 16px rgba(0, 170, 255, 1), 0 0 28px rgba(0, 119, 170, 1);
+			background-position: right center;
+		}
+
+		.info {
+			display: none;
+			background: linear-gradient(135deg, rgba(0, 29, 74, 0.75) 0%, rgba(0, 59, 122, 0.75) 60%, rgba(0, 170, 255, 0.45) 100%);
+			border: 1px solid rgba(0, 200, 255, 0.35);
+			max-width: 380px;
+			margin: 24px auto;
+			padding: 28px;
+			border-radius: 22px;
+			box-shadow: 0 0 12px rgba(0, 240, 255, 1), 0 0 24px rgba(0, 85, 255, 1);
+			position: relative;
+			z-index: 1;
+			overflow: hidden;
+		}
+
+		.info.active {
+			display: block;
+		}
+
+		.panel-grid {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px;
+			padding: 10px 20px;
+		}
+
+		.info-static {
+			display: block;
+			width: 340px;
+		}
+
+		.info.active {
+			display: block;
+			animation: panelFade 600ms ease;
+		}
+
+		.info a,
+		.credit a {
+			color: rgba(168, 232, 247, 1);
+			text-decoration: none;
+			position: relative;
+			transition: 0.3s;
+			background-image: linear-gradient(90deg, rgba(0, 136, 204, 1), rgba(168, 232, 247, 1), rgba(0, 136, 204, 1));
+			background-repeat: no-repeat;
+			background-size: 0% 2px;
+			background-position: left bottom;
+			transition: background-size 0.3s ease, color 0.3s ease, filter 0.3s ease;
+			padding-bottom: 2px;
+		}
+
+		.info a:hover {
+			filter: hue-rotate(5deg) brightness(1.08);
+			background-size: 100% 2px;
+		}
+
+		.credit {
+			position: absolute;
+			left: 0;
+			right: 0;
+			transform: none;
+			margin: 0 auto;
+			z-index: 2;
+			color: rgba(100, 149, 237, 1);
+			background: rgba(8, 47, 153, 0.35);
+			padding: 6px 10px;
+			border-radius: 10px;
+			border: 1px solid rgba(0, 200, 255, 0.3);
+			box-shadow: 0 0 10px rgba(0, 240, 255, 1);
+			font-size: 12px;
+			width: 350px;
+		}
+
+		p {
+			line-height: 1.6;
+			font-size: 1.05em;
+			text-align: center;
+			max-width: 34rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+
+		/* OMEGA SEAL */
+
+
+		.omega {
+			background: linear-gradient(135deg, rgba(0, 181, 217, 1) 0%, rgba(0, 0, 158, 1), rgba(0, 0, 82, 1));
+			width: 50px;
+			height: 50px;
+			display: block;
+			z-index: 500;
+			margin: 0 auto;
+			box-shadow: 0 0 12px rgba(0, 240, 255, 1), 0 0 24px rgba(0, 85, 255, 1);
+			border-radius: 50%;
+			text-align: center;
+			font-size: 2.3rem;
+		}
+
+
+
+		@keyframes neonPulse {
+
+			0%,
+			100% {
+				text-shadow: 0 0 3px rgba(0, 208, 255, 1), 0 0 8px rgba(0, 136, 204, 1);
+			}
+
+			50% {
+				text-shadow: 0 0 7px rgba(0, 224, 255, 1), 0 0 12px rgba(0, 153, 221, 1);
+			}
+		}
+
+		@keyframes neonHyperPulse {
+
+			0%,
+			100% {
+				text-shadow: 0 0 3px rgba(0, 208, 255, 1), 0 0 8px rgba(0, 136, 204, 1);
+			}
+
+			50% {
+				text-shadow: 0 0 7px rgba(0, 224, 255, 1), 0 0 30px rgba(0, 153, 221, 1);
+			}
+		}
+
+
+		h1,
+		h2,
+		h3 {
+			animation: neonPulse 6s infinite ease-in-out;
+		}
+
+		@keyframes slideInLeft {
+			from {
+				transform: translateX(-100px);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideInRight {
+			from {
+				transform: translateX(100px);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideInUp {
+			from {
+				transform: translateY(100px);
+				opacity: 0;
+			}
+
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes panelFade {
+			from {
+				opacity: 0;
+				transform: translateY(8px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.scrolling-left {
+			animation: slideInLeft 1s ease-out forwards;
+		}
+
+		.scrolling-right {
+			animation: slideInRight 1s ease-out forwards;
+		}
+
+		.scrolling-up {
+			animation: slideInUp 1s ease-out forwards;
+		}
+
+		.join-actions {
+			display: flex;
+			gap: 12px;
+			justify-content: center;
+			margin: 10px 0;
+		}
+
+		#text {
+			display: none;
+			position: relative;
+			background: linear-gradient(145deg, rgba(0, 18, 42, 0.96) 0%, rgba(0, 44, 96, 0.86) 100%);
+			border: 1px solid rgba(0, 240, 255, 0.45);
+			padding: 16px 18px;
+			border-radius: 16px;
+			box-shadow: 0 0 14px rgba(0, 240, 255, 0.22), inset 0 0 0 1px rgba(170, 245, 255, 0.08);
+			color: rgba(216, 251, 255, 1);
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			line-height: 1.6;
+			font-family: Consolas, 'Courier New', monospace;
+			font-size: 13px;
+			font-weight: 300;
+			letter-spacing: 0.01em;
+			margin-top: 8px;
+		}
+
+		#text.show {
+			display: block;
+			animation: panelFade 600ms ease;
+		}
+
+		.join-msg {
+			text-align: center;
+			color: rgba(174, 250, 255, 1);
+			min-height: 18px;
+			margin: 4px 0 0 0;
+			font-size: 0.92em;
+		}
+
+		.join-input,
+		.join-textarea {
+			width: min(340px, calc(100vw - 96px));
+			max-width: none;
+			box-sizing: border-box;
+			padding: 10px 12px;
+			font-size: 17px;
+			border-radius: 14px;
+			border: 1px solid rgba(0, 200, 255, 0.35);
+			background: rgba(0, 20, 60, 0.35);
+			color: rgba(224, 251, 255, 1);
+			box-shadow: inset 0 0 8px rgba(0, 170, 255, 0.2), 0 0 8px rgba(0, 170, 255, 0.15);
+			outline: none;
+			transition: all .2s ease;
+		}
+
+		.join-input::placeholder,
+		.join-textarea::placeholder {
+			color: rgba(159, 216, 255, 1);
+			font-size: 16px;
+		}
+
+		.join-input:focus,
+		.join-textarea:focus {
+			border-color: rgba(0, 170, 255, 1);
+			box-shadow: inset 0 0 10px rgba(0, 170, 255, 0.35), 0 0 12px rgba(0, 170, 255, 0.35);
+			filter: brightness(1.03);
+		}
+
+		.join-input.join-filled:not(.join-invalid),
+		.join-textarea.join-filled:not(.join-invalid) {
+			border-color: rgba(92, 216, 255, 1);
+			box-shadow: inset 0 0 12px rgba(0, 170, 255, 0.32), 0 0 14px rgba(0, 170, 255, 0.3);
+			filter: brightness(1.05);
+		}
+
+		.join-field {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 6px;
+			margin: 6px 0;
+		}
+
+		.join-label {
+			color: rgba(174, 250, 255, 1);
+			text-shadow: 0 0 6px rgba(0, 170, 255, 1), 0 0 12px rgba(0, 119, 170, 1);
+		}
+
+		.join-invalid {
+			border-color: rgba(255, 93, 143, 1) !important;
+			box-shadow: inset 0 0 10px rgba(255, 80, 130, 0.35), 0 0 12px rgba(255, 80, 130, 0.35) !important;
+		}
+	</style><!--Longest bit of code lol,99% made by Hooray X.-->
+	<script>
+		/**Credit to ViscousTrex for this**/
+		var thing = 0;
+
+		var speed = 1;
+
+		function title() {
+			window.top.postMessage(JSON.stringify({
+				"action": "page-info",
+				"title": "Team Omega Primes Official Homepage        ".substring(0, thing) + " Ω"
+			}), "https://www.khanacademy.org/")
+
+			if (thing == 36) {
+				speed = -1
+			} else if (thing == -1) {
+				speed = 1
+			}
+
+			thing += speed;
+
+		}
+		window.setInterval(title, 140);
+	</script>
 </head>
 
-<body>
-	<div class="background-rotator" id="bgrotator"></div>
-	<div id="intro">
-		<h1>TOP</h1>
+<body onclick="showContent()">
+	<!--The Thumbnail Script 2.1.0 12/18/2023 by Bluebird@kaid_157624541333313939750668 updated a bit by Hooray X.-->
+	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+	<script type>
+		var r = 600,
+			s = document.documentElement.clientWidth;
+		window.parent.html2canvas = t => {
+			try {
+				html2canvas(document.body, {
+					width: s,
+					height: s,
+					useCORS: !0,
+					onclone: t => t.getAnimations().forEach((t => {
+						try {
+							t.finish()
+						} catch {}
+					}))
+				}).then((t => {
+					var e = document.createElement("canvas");
+					e.width = r, e.height = r, e.getContext("2d").drawImage(t, 0, 0, t.width, t.height, 0, 0, r, r), window.top.postMessage(e.toDataURL(), "*")
+				})).catch((t => {
+					alert("Thumbnail Script Error: " + t)
+				}))
+			} catch {
+				window.top.postMessage(document.createElement("canvas").toDataURL(), "*")
+			}
+		};
+	</script>
+
+	<div class="background-rotator" aria-hidden="true">
+		<div class="background-layer background-layer-a active"></div>
+		<div class="background-layer background-layer-b"></div>
+	</div>
+	<div class="background-switch">
+		<button class="buttonn" id="background-switcher" type="button" aria-label="Ice Giants" title="Ice Giants"><span class="theme-emoji">❄</span></button>
 	</div>
 
-	<button id="background-switcher">
-		<span class="theme-emoji">🌙</span>
-	</button>
+	<div id="intro">
+		<h1>Ω</h1>
+		<p>OMEGA PRIMES</p>
+		<div class="small">Optimized to the core.</div>
+	</div><!--Intro-->
 
-	<main>
-		<h1 style="margin-top: 60px;">Team Omega Primes</h1>
-		<h2>The Ultimate Coding Team</h2>
-		<div id="members">
-			<h3>Members</h3>
-			<ul class="member-grid">
-				<li>
-					<img src="https://avatars.githubusercontent.com/u/?v=4" alt="Avatar">
-					<div class="member-main">
-						<a href="#">Rain</a>
-					</div>
-					<div class="member-rank">Founder</div>
-					<div class="member-bio">Co-Creator
-						<a href="https://github.com/rainliu0325" class="member-github-tag">GitHub</a>
-					</div>
-				</li>
-				<li>
-					<img src="https://avatars.githubusercontent.com/u/?v=4" alt="Avatar">
-					<div class="member-main">
-						<a href="#">Hooray X.</a>
-					</div>
-					<div class="member-rank">Founder</div>
-					<div class="member-bio">Co-Creator
-						<a href="https://github.com/hooray-xia" class="member-github-tag">GitHub</a>
-					</div>
-				</li>
-				<li>
-					<img src="https://avatars.githubusercontent.com/u/?v=4" alt="Avatar">
-					<div class="member-main">
-						<a href="#">MMS Matthew360</a>
-					</div>
-					<div class="member-rank">Member</div>
-					<div class="member-bio">Designer & Developer
-						<a href="https://github.com/matthew2888" class="member-github-tag">GitHub</a>
-					</div>
-				</li>
-				<li>
-					<img src="https://avatars.githubusercontent.com/u/?v=4" alt="Avatar">
-					<div class="member-main">
-						<a href="#">Greenfroggy64</a>
-					</div>
-					<div class="member-rank">Member</div>
-					<div class="member-bio">Developer
-						<a href="https://github.com/ThatCodingFrog" class="member-github-tag">GitHub</a>
-					</div>
-				</li>
-				<li>
-					<img src="https://avatars.githubusercontent.com/u/?v=4" alt="Avatar">
-					<div class="member-main">
-						<a href="#">Other Member</a>
-					</div>
-					<div class="member-rank">Member</div>
-					<div class="member-bio">Team Member</div>
-				</li>
-			</ul>
+	<main id="main-content">
+
+
+
+		<h1 class="scrolling-up">∞Ω∞ Team ∞Ω∞<br>Omega Primes</h1>
+		<div class="scrolling-up omega">Ω</div>
+
+		<div class="menu scrolling-up">
+			<a href="#home" data-target="home">Home</a>
+			<a href="#about" data-target="about">About</a>
+			<a href="#events" data-target="events">Events</a>
+			<a href="#projects" data-target="projects">Projects</a>
+			<a href="#members" data-target="members">Members</a>
+			<a href="#join" data-target="join">Join</a>
+		</div><!--Menu-->
+		<div class="home-actions scrolling-up">
+			<!--<button class="buttonn" id="myButton" type="button">Fullscreen</button>-->
 		</div>
 
-		<div id="projects">
-			<h3>Projects</h3>
-			<ul class="project-card-list">
+		<div class="info active" id="home">
+			<h1>Home</h1>
+			<p class="left high-limit">Welcome to <strong>Team Omega Primes</strong>! We are a team of programmers who achieve success by practicing, supporting each other, and collaborating. We accept programmers from any level of skill and any programming language!</p>
+			<p class="left"><strong>Team Acronym:</strong> T.O.P.</p>
+			<p class="left"><strong>Founding Date:</strong> October 2025</p>
+			<p class="left"><strong>Founder:</strong> <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a></p>
+			<p class="left"><strong>Admins:</strong> <a href="https://www.khanacademy.org/profile/kaid_677611614554857766314873" target="_blank">MMS Matthew360°</a>, <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062" target="_blank">Hooray X.</a> and <a href="https://www.khanacademy.org/profile/kaid_394298844827230785358833">Rain</a>.</p>
+			<p class="left"><strong>Mission:</strong> Our mission at Omega Primes is to unite and train programmers across Khan Academy to become hard-working, helpful, and eager to work together.</p>
+			<br>
+			<h2>Love our theme?</h2>
+			<p class="left high-limit">We do too. Use this HTML/CSS code below to create your own awesome project. Don't forget to give us credit. We've included it in the code below:</p>
+			<pre>
+                <code class="language-html">
+
+&lt;!DOCTYPE html&gt;
+&lt;!--Created from an Omega Primes template.--&gt;
+&lt;html lang=&quot;en&quot;&gt;
+   &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+      &lt;title&gt;Omega Primes Webpage&lt;/title&gt;
+      &lt;link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet"&gt;
+      &lt;style&gt;
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Orbitron', monospace;
+                overflow-x: hidden;
+                color: #00f0ff;
+                position: relative;
+            }
+            
+            #bg { 
+                position: fixed; 
+                top:0; 
+                left:0;
+                width:100vw; 
+                height:100vh; 
+                z-index:0; 
+                overflow:hidden; 
+            }
+            #bg .layer { 
+                position:absolute;
+                top:0;
+                left:0; 
+                width:100vw;
+                height:100vh;
+                background-size:cover;
+                background-position:center;
+                opacity:0; 
+                transition: opacity 4s ease-in-out; 
+                filter: brightness(0.75) contrast(1.05) saturate(1.15); 
+            }
+            #bg .layer.active { 
+                opacity:1; 
+            }
+            
+            .main-div { 
+                background: linear-gradient(135deg, rgba(0,29,74,0.75) 0%, rgba(0,59,122,0.75) 60%, rgba(0,170,255,0.45) 100%);
+                border: 1px solid rgba(0,200,255,0.35);
+                max-width: 380px;
+                margin: 24px auto;
+                padding: 28px;
+                border-radius: 22px;
+                box-shadow: 0 0 12px #00f0ff, 0 0 24px #0055ff;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;div id="bg"&gt;
+            &lt;div class="layer active" style="background-image: url('enter image link here');"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="main-div"&gt;
+            &lt;!--Example content--&gt;
+            &lt;h1&gt;My Omega Primes Project&lt;/h1&gt;
+            &lt;p&gt;Enter text here...&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+		</div><!--Home-->
+
+		<div class="info scrolling-right" id="about">
+			<h1>About</h1>
+			<br>
+			<h2>How we began</h2>
+			<p class="left">One fine October morning, with the cool wind blowing outside, a Khan Academy user named <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> had an idea as cool as the outdoor temperature.</p>
+			<p class="left">This particular user had been on multiple teams, such as CodeX, Scriptara, and Team Coding Pros. He had had so much fun on those teams. But when they fell inactive, <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> got bored.<br>His idea was: <strong>He would make his <em>own</em> team!</strong></p>
+			<p class="left">So <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> set to work, creating a team homepage using Python, the programming language he knew the most.</p>
+			<p class="left">Once that was done, <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> invited several users to join the team. All accepted, and Team Omega Primes had officially begun.</p>
+			<h2>The terrible inactivity</h2>
+			<p class="left">Soon after the team's success, however, <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> announced that he would become inactive! Soon after <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> fell inactive, so did the entire team! It looked as if Team Omega Primes was on the verge of falling apart.</p>
+			<h2>The team rises again</h2>
+			<p class="left">Thankfully, under the leadership of <a href="https://www.khanacademy.org/profile/kaid_677611614554857766314873">MMS Matthew360°</a>, Team Omega Primes continued to stand.</p>
+			<p class="left">Then, <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> returned, with new knowledge of HTML and CSS! He and <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a> built a new homepage using HTML and CSS.<br>Soon, after the team's victory, <a href="https://www.khanacademy.org/profile/kaid_829234581759719945657916">Pinkcatsoda</a>, a skilled programmer-artist, also joined the team. It seemed that the glorious days would never end.</p>
+			<h2>The Christmas Blizzard</h2>
+			<p class="left">But around Christmas, the team faced yet another crucial challenge. Then important admin <a href="https://www.khanacademy.org/profile/kaid_677611614554857766314873">M.M.S. (Matthew360)</a> went semi-inactive, soon followed by <a href="https://www.khanacademy.org/profile/kaid_829234581759719945657916">Pinkcatsoda</a> and <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> too. Just when things were looking terrible, <a href="https://www.khanacademy.org/profile/kaid_578661680921733406040161">DebugRanger</a> decided to join because he thought this team needed help. <a href="https://www.khanacademy.org/profile/kaid_1186408866140234333238044">Lord Familia</a> and <a href="https://www.khanacademy.org/profile/kaid_1078378520650574901650073">1001programmer1001</a> joined too.<br>With the help of the new members, the team rose again, with important admin <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a> updating the homepage to look even cooler!</p>
+			<h2>The New Year Rush</h2>
+			<p class="left">Since the start of the new year, 3 members have joined Team Omega Primes within the first week of 2026! This was probably one of T.O.P.'s greatest weeks. Say hello to <a href="https://www.khanacademy.org/profile/kaid_1078378520650574901650073">1001programmer1001</a>, <a href="https://www.khanacademy.org/profile/kaid_1186408866140234333238044">Lord Familia</a>, and <a href="https://www.khanacademy.org/profile/kaid_4157025907581241548995475">Fi fi fo fum</a>!</p>
+			<h2>Contest Summoning</h2>
+			<p class="left">Soon, new users started swarming in thanks to <a href="https://www.khanacademy.org/profile/kaid_1078378520650574901650073">1001programmer1001</a>'s posters and our games. <a href="https://www.khanacademy.org/profile/kaid_394298844827230785358833">Rain</a>, <a href="https://www.khanacademy.org/profile/kaid_5269884588402240227278291">Lettuce the Great Parrot🥨🦜</a>, <a href="https://www.khanacademy.org/profile/kaid_12292242763670672864943">Borbonbaseball17</a>, <a href="https://www.khanacademy.org/profile/kaid_4815615438153162796364791">Shadow</a>, <a href="https://www.khanacademy.org/profile/kaid_8259026998720596700468501">Akh</a>,<br><a href="https://www.khanacademy.org/profile/kaid_413575084497159272792117">caleb.catt</a>, <a href="https://www.khanacademy.org/profile/kaid_379384843910705248659233">Exospacer</a>, <a href="https://www.khanacademy.org/profile/kaid_2866649053533900543633356">JustLord</a>, and <a href="https://www.khanacademy.org/profile/kaid_683269329038607171911600">Robby</a> joined the team. <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a> hosted the Contest: Planetoid and <a href="https://www.khanacademy.org/profile/kaid_1078378520650574901650073">1001programmer1001</a> came out on top!</p>
+			<h2>Ocean Exploring</h2>
+			<p><a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a> created projects Snake I and Snake II and successfully reached over 30 votes. This victory gave us the idea for a JS project that could rival Team Quantum Cat's CoC final Abyssal. We started the project Ocean Before Time, with most of the team helping. We were surprised how popular it was even when it was a menu without any real game, getting 38 votes. And just like that, we attracted the users <a href="https://www.khanacademy.org/profile/kaid_878332344750460734130956">Josephine❤︎</a>, <a href="https://www.khanacademy.org/profile/kaid_574576985099042639713735">GᴀʟᴀxʏRᴀɴɢᴇʀ</a>, <a href="https://www.khanacademy.org/profile/kaid_336838091572425251271773/">ϮԋϵϾԋᴉͼҝϵлѪαϟϯϵπ</a>, and <a href="https://www.khanacademy.org/profile/kaid_434226319389036660332874">Fluffy (≖⩊≖)</a>. At the time, <a href="https://www.khanacademy.org/profile/kaid_394298844827230785358833">Rain</a>, the Brainstormer Head, created a pixel art poster attracting a portion of the members mentioned above.</p>
+			<h2>HTML Reckoning</h2>
+			<p>While most of the team worked on Ocean before time,Hooray X. and Rain decided to do some HTML.As Hooray X. made yet <em>another</em> update on this cool and spectacular homepage,Rain created inspirational posters to Join T.O.P.. Hooray X. started making a 3D Platformer and together with Rain's posters to get 6 new members,<a href="https://www.khanacademy.org/profile/kaid_82898098000024228278987">SWΛNKYᴍᴀɴ
+				</a>,<a href="https://www.khanacademy.org/profile/kaid_874151668702033138605965">Ϊ∯Λ∀ΞΠΘΠΛ₼Ξ</a>,<a href="https://www.khanacademy.org/profile/kaid_250216876308675101675883">Anonymous</a>,<a href="https://www.khanacademy.org/profile/kaid_521789616340270471323300">Ikorac🔥
+				</a>,<a href="https://www.khanacademy.org/profile/kaid_216276079253098825743247">Blueburst
+				</a>,<a href="https://www.khanacademy.org/profile/kaid_216276079253098825743247">FancyBoy
+				</a>and <a href="https://www.khanacademy.org/profile/kaid_466731574472354573012698">Dragon Studios🔥🐦🐉🐍
+				</a></p>
+		</div><!--About-->
+
+		<div class="info scrolling-right" id="events">
+			<h1>Events</h1>
+			<br>
+
+			<h2>Current Event</h2>
+			<p>None at the time.</p>
+
+			<h2>Upcoming Events</h2>
+			<p>No upcoming events currently.</p>
+
+			<h2>Past Events</h2>
+			<h3>Contest: Planetoid</h3>
+			<p><strong>Starting Date:</strong> 15 March 2026</p>
+			<p><strong>Finishing Date:</strong> 15 April 2026</p>
+			<p>Team members have a month to make a game or graphic of the universe theme using a programming language of their choice. More info in March 2026.
+				<br>Link to event:
+				<a href="https://www.khanacademy.org/computer-programming/top-contest-planetoid/6139916324552704" target="_blank">Click Link</a>
+			</p>
+			<p>Winners: <br>#1 <a href="https://www.khanacademy.org/profile/kaid_1078378520650574901650073">1001programmer1001</a> Score: [18⅓]</p><!--Wow! a ⅓ score margin!-->
+			<p>#2 <a href="https://www.khanacademy.org/profile/kaid_4157025907581241548995475">Fi fi fo fum</a> Score: [18] </p>
+			<p>#3 <a href="https://www.khanacademy.org/profile/kaid_2866649053533900543633356">JustLord</a> Score: [14⅔] </p>
+			<p>Projects:<br><a href="https://www.khanacademy.org/profile/kaid_1078378520650574901650073">1001programmer1001</a>'s entry:<br><a href="https://www.khanacademy.org/computer-programming/contest-entry-001/4551172286955520">Solar System Orbitor</a> <br>An alien lands in our Solar System and learns about it on his way out.</p>
+			<div class="project-showcase small">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/contest-entry-001/4551172286955520/5437093212176384.png" alt="Solar System Orbitor preview">
+			</div>
+			<p><a href="https://www.khanacademy.org/profile/kaid_4157025907581241548995475">Fi fi fo fum</a>'s entry:<br><a href="https://www.khanacademy.org/computer-programming/interactive-galaxy-webpage/5051583440470016">Interactive Galaxy Webpage</a><br> A beautiful simulation of the Milky Way vs the Adromeda!</p>
+			<div class="project-showcase small">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/interactive-galaxy-webpage/5051583440470016/5428123537883136.png" alt="Interactive Galaxy Webpage preview">
+			</div>
+			<p><a href="https://www.khanacademy.org/profile/kaid_2866649053533900543633356">JustLord</a>'s entry:<br><a href="https://www.khanacademy.org/python-program/rocket-simulator/4658053076598784">Rocket Simulator</a><br>A playful and fun simulation of a rocket taking off in python! </p>
+			<div class="project-showcase small">
+				<img class="project-preview" src="https://www.khanacademy.org/python-program/rocket-simulator/4658053076598784/latest.png" alt="Rocket Take-off Simulator preview">
+			</div>
+			<br>
+			<h3>T.O.P. LAL (Learn-A-Language) 2026</h3>
+			<p><strong>Starting Date:</strong> 15 January 2026</p>
+			<p><strong>Finishing Date:</strong> 15 February 2026</p>
+			<p>Team members have a month to learn a new programming language and build a project using it. Time is limited!
+				<br>Link to event:
+				<a href="https://www.khanacademy.org/computer-programming/team-omega-primes-lal/4980625330782208" target="_blank">Click Link</a>
+			</p>
+			<p>Winners: <br>#1 <a href="https://www.khanacademy.org/profile/kaid_829234581759719945657916">Pinkcatsoda</a> and <a href="https://www.khanacademy.org/profile/kaid_677611614554857766314873">MMS (Matthew360°)</a> Score: [8⅔]</p>
+			<p>#2 <a href="https://www.khanacademy.org/profile/kaid_1186408866140234333238044">Lord Familia</a> Score: [8] (For some reason account deleted after submission) </p>
+			<p>#3 <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a> (Banned at the time, no project D:)</p>
+			<p>Projects: <br>Matthew365's entry:<br><a href="https://www.khanacademy.org/computer-programming/team-omega-primes-members/5315584608288768"> T.O.P. OG member table </a><br>A simple SQL table of T.O.P. members in the old times.</p>
+			<table class="project-preview" id="Table-text">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Username</th>
+						<th>Rank Role</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>TorrentForce</td>
+						<td>Bacilluscoagulans</td>
+						<td>Omega Prime</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>MMS (Matthew360°)</td>
+						<td>abcde1235</td>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Hooray X.</td>
+						<td>HoorayX.</td>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>agodwin01</td>
+						<td>agodwin01</td>
+						<td>Omicronner</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>DebugRanger</td>
+						<td>Bairdlyon</td>
+						<td>Pro-deltagrammer</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>1001programmer1001</td>
+						<td>programmer1001</td>
+						<td>Deltagrammer, Animator</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Apple834</td>
+						<td>Apple834</td>
+						<td>Deltagrammer, Python developer</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>The Fire Studios</td>
+						<td>LogicAndUnlogicAtTimes</td>
+						<td>Alpha coder</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Harry Bray</td>
+						<td>None</td>
+						<td>Pro-alpha coder</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Lord Familia</td>
+						<td>Famila</td>
+						<td>Pro-alpha coder</td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>randomblueleaf</td>
+						<td>randomblueleaf</td>
+						<td>Pro-alpha coder</td>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>Pinkcatsoda</td>
+						<td>pinkcatsoda</td>
+						<td>Pro-alpha coder, Artist</td>
+					</tr>
+					<tr>
+						<td>13</td>
+						<td>Fi fi fo fum</td>
+						<td>None</td>
+						<td>Pro-alpha coder</td>
+					</tr>
+					<tr>
+						<td>14</td>
+						<td>CobraLily</td>
+						<td>HarpyEaglePereGrineFalconCobraLily</td>
+						<td>Deltagrammer, Brainstormer</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>PinkCatSoda's entry:<br><a href="https://www.khanacademy.org/python-program/ka-profile-simulator-my-entry-to-omega-primes-lal-contest/5615469658226688"> KA Profile Simulator </a><br>A nice a subtle KA profile creation machine! </p>
+			<div class="project-showcase small">
+				<img class="project-preview" src="https://www.khanacademy.org/python-program/ka-profile-simulator-my-entry-to-omega-primes-lal-contest/5615469658226688/latest.png" alt="KA Profile Simulator preview">
+			</div>
+		</div><!--Events-->
+
+
+		<script>
+			function showPanel(id) {
+				var panels = Array.prototype.slice.call(document.querySelectorAll('.info'))
+				panels.forEach(function(p) {
+					p.classList.remove('active')
+				})
+				var target = document.getElementById(id)
+				if (target) {
+					target.classList.add('active')
+				}
+			}
+
+			var links = Array.prototype.slice.call(document.querySelectorAll('.menu a[data-target]'))
+			links.forEach(function(a) {
+				a.addEventListener('click', function(e) {
+					e.preventDefault()
+					var id = a.getAttribute('data-target')
+					if (id) {
+						if (history && history.pushState) {
+							history.pushState(null, '', '#' + id)
+						} else {
+							location.hash = '#' + id
+						}
+						showPanel(id)
+					}
+				})
+			})
+
+			(function initFromHash() {
+				var h = (location.hash || '').replace('#', '')
+				if (h) {
+					showPanel(h)
+				}
+			})()
+		</script><!--All Script Tags By Hooray X.-->
+		<script type="module">
+			const button = document.getElementById("myButton");
+			if (button) {
+				button.addEventListener("click", () => {
+					const w = window.open();
+					w.document.open();
+					w.document.write(`<!DOCTYPE html><html>${document.querySelector("html").innerHTML}</html>`);
+					w.document.close();
+				});
+			}
+		</script>
+		<div class="info scrolling-left" id="projects">
+			<h1>Projects</h1>
+			<br>
+			<h1>Team Projects</h1>
+			<h2>Current Project</h2>
+			<p><strong>Ocean Before Time<em>[GAME]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/ocean-before-time-wip/5198806547546112/latest.png" alt="Ocean Before Time preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/computer-programming/ocean-before-time-wip/5198806547546112" target="_blank">View Project</a> <br> 46 votes upon starting,the best team project yet!</p>
+			<h2>Paused Projects</h2>
+			<p><strong>Python Pac-Man<em>[WIP PAUSED]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/python-program/team-omega-primes-project-i-pac-man/5722838286319616/latest.png" alt="Python Pac-Man preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/python-program/team-omega-primes-project-i-pac-man/5722838286319616" target="_blank">View Project</a></p>
+			<h2>Complete Projects</h2>
+			<p><strong>Explore Loop 3<em>[GAME]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/python-program/explore-loop-3-team-omega-primes-project/5346166031630336/latest.png" alt="Explore Loop 3 preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/python-program/explore-loop-3-team-omega-primes-project/5346166031630336" target="_blank">View Project</a><br> First finished project, 15 votes!</p>
+			<br>
+			<h1>Member Projects</h1>
+			<p><strong>3D Platformer<em>[GAME]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/3d-platformer-join-top/4685442348072960/latest.png" alt="3d pLATFORMER preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/computer-programming/3d-platformer-join-top/4685442348072960" target="_blank">View Project</a><br> </p>
+			<p>Creator: <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a><br>74 Votes,once top of the HL,a 3D Platformer made by three.js for Team Omega Primes.</p>
+			<br>
+			<p><strong>Playing Cards<em>[SIMULATION]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/playing-cards/6417768135639040/latest.png" alt="playing cards preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/computer-programming/playing-cards/6417768135639040" target="_blank">View Project</a><br> </p>
+			<p>Creator: <a href="https://www.khanacademy.org/profile/kaid_4157025907581241548995475">Fi fi fo fum</a><br>5 Votes,a nice simulation of cards with a light twist >:)</p>
+			<br>
+			<p><strong>Planet Graphic <em>[ANIMATION]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/planet-top-graphic/5948860346515456/4589439517310976.png" alt="planet preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/computer-programming/planet-top-graphic/5948860346515456" target="_blank">View Project</a><br> </p>
+			<p>Creator: <a href="https://www.khanacademy.org/profile/kaid_568053311456555725201444/discussion">ℝ𝕒𝕚𝕟</a><br>
+				10 Votes, a beautiful animation of a ringed blue-ish planet.</p>
+			<br>
+			<p><strong>Neptune 3D <em>[ANIMATION]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/neptune-in-threejs-join-top-pls/4793157869223936/5846356998864896.png" alt="neptune preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/computer-programming/neptune-in-threejs-join-top-pls/4793157869223936" target="_blank">View Project</a><br> </p>
+			<p>Creator: <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a><br>
+				22 Votes,a 3D animation in Three.js of Neptune and Triton.</p>
+			<br>
+			<p><strong>AWSOME SWORD <em>[ANIMATION]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/awsome-sword-top-graphic/5183822658650112/5897947737079808.png" alt="sword preview">
+			</div>
+			<p>Link: <a href="http://khanacademy.org/computer-programming/updated-awesome-sword-top-graphic/5183822658650112" target="_blank">View Project</a><br> </p>
+			<p>Creator: <a href="https://www.khanacademy.org/profile/kaid_521789616340270471323300">Ikorac🔥</a><br>
+				20 Votes, top of the HL a 2D animation of a cool sword of flames.</p>
+			<br>
+			<p><strong>Join T.O.P. <em>[POSTER]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/join-top/5501255808303104/6082022561136640.png" alt="JOINtop preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/computer-programming/join-top/5501255808303104" target="_blank">View Project</a><br> </p>
+			<p>Creator: <a href="https://www.khanacademy.org/profile/kaid_568053311456555725201444">ℝ𝕒𝕚𝕟</a><br>
+				16 Votes,a poster for people to join us :D</p>
+			<br>
+			<p><strong>Space T.O.P. Graphics <em>[ANIMATION]</em></strong></p>
+			<div class="project-showcase">
+				<img class="project-preview" src="https://www.khanacademy.org/computer-programming/spacetop-graphicyes-i-did-this-in-3-hours/5771054287273984/6134823991492608.png" alt="rocket preview">
+			</div>
+			<p>Link: <a href="https://www.khanacademy.org/computer-programming/spacetop-graphicyes-i-did-this-in-3-hours/5771054287273984" target="_blank">View Project</a><br> </p>
+			<p>Creator: <a href="https://www.khanacademy.org/profile/kaid_568053311456555725201444/discussion">ℝ𝕒𝕚𝕟</a><br>
+				13 Votes,a 2D animation with a song looping through a picture of a rocket. Boing :D!</p>
+			<br>
+		</div><!--Projects-->
+
+
+		<div class="info scrolling-right" id="members">
+			<h1>Members</h1>
+			<p>We have 43 members and counting!</p>
+			<p class="left"><strong>Coding Levels:</strong> Alpha coder, Pro-alpha coder, Deltagrammer, Pro-deltagrammer, Sigma-deltagrammer, Proto-omicronner, Omicronner.</p>
+			<p class="left"><strong>Special Rank Ladder:</strong> Co-leader/head, Leader/Head, Pro-admin, Admin, Omega Prime.</p>
+			<br>
+			<div class="member-toolbar">
+				<div class="member-sort-wrap">
+					<label for="member-sort">Sort by</label>
+					<select id="member-sort" class="member-sort">
+						<option value="default">Default order</option>
+						<option value="rank">Rank</option>
+						<option value="alphabetical">Alphabetical order</option>
+						<option value="level">Coding level</option>
+					</select>
+				</div>
+			</div>
+			<ul class="member-grid" id="member-grid">
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/leaf-blue.png" alt="TorrentForce avatar">
+					<div class="member-main">
+
+						<a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/" class="torrentforce member-name" target="_blank">TorrentForce</a>
+						<p class="member-bio">Leader of Team Omega Primes. Over 1,000 votes. I code Python, HTML/CSS, and ProcessingJS.</p>
+					</div>
+					<span class="member-rank">Sigma-deltagrammer, Python Omega and Omega Prime</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/piceratops-tree.png" alt="MMS avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_677611614554857766314873" class="mms member-name" target="_blank">MMS (Matthew360°)</a>
+					</div>
+					<span class="member-rank">Sigma-deltagrammer, Project Inspector and Admin</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/piceratops-ultimate.png" alt="Hooray X. avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062" class="hoorayx member-name" target="_blank">Hooray X.</a>
+						<p class="member-bio"># Unban me</p>
+					</div>
+					<span class="member-rank">Omicronner, Developer HTML/CSS Hyperion and Admin</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/starky-tree.png" alt="agodwin01 avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_8826452778567227618964185" class="agodwin01 member-name" target="_blank">agodwin01</a>
+						<p class="member-bio">I gained fame on Khan Academy. Not intentionally, rather, I was just avoiding my real homework.</p>
+					</div>
+					<span class="member-rank">Omicronner, Pro-Admin</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Cool.png" alt="DebugRanger avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_578661680921733406040161" class="debugRanger member-name" target="_blank">DebugRanger</a>
+					</div>
+					<p class="member-bio">Time to learn HTML better or not. Maybe next year, | #Do whatever you want to images | Semi advanced coder| been here 9 years
+					</p>
+					<span class="member-rank">Omicronner, ProccesingJS Leader</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Cool.png" alt="1001programmer1001 avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_1078378520650574901650073" class="1001programmer member-name" target="_blank">1001programmer1001</a>
+					</div>
+					<span class="member-rank">Sigma-deltagrammer, Developer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/leafers-seed.png" alt="Apple834 avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_2244939474995187939142580" class="apple834 member-name" target="_blank">Apple834</a>
+					</div>
+					<p class="member-bio">*Mostly Inactive* Skills/Interests: Python, Machine Learning, 2D games/simulations, breaking Khan's limits</p>
+					<span class="member-rank">Sigma-deltagrammer, Developer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/piceratops-seed.png" alt="The Fire Studios avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_8376781220318004815777365" class="thefirestudios member-name" target="_blank">The Fire Studios 🔥</a>
+						<p class="member-bio">Once Sherlock Holmes, now the owner of the Fire studios. I'm currently on a contest winning streak!</p>
+					</div>
+					<span class="member-rank">Alpha coder</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/sneak-peak-blue.svg" alt="Harry Bray avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_3520371265249039217043893" class="harrybray member-name" target="_blank">Harry Bray</a>
+					</div>
+					<p class="member-bio">(Call me Harry) I program in Python 3. I answer most Grade 2-3 math questions. I have a homepage you can take out for more information! :)</p>
+					<span class="member-rank">Deltagrammer, Developer</span>
+
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/leafers-ultimate.png" alt="Lord Familia avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_131631199014776368963350" class="lordfamlia member-name" target="_blank">Lord Familia</a>
+					</div>
+					<span class="member-rank">Pro-alpha coder</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/leaf-blue.png" alt="randomblueleaf avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_6529252712136634183273373" class="randomblueleaf member-name" target="_blank">randomblueleaf</a>
+					</div>
+					<span class="member-rank">Pro-alpha coder</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/duskpin-ultimate.png" alt="Pinkcatsoda avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_829234581759719945657916" class="pinkcatsoda member-name" target="_blank">Pinkcatsoda</a>
+						<p class="member-bio">Quote 1 - I declare after all there is no enjoyment like reading! - Jane Austen, 1775-1817. Quote 2 - What have we without books? We have no past, and no future.</p>
+					</div>
+					<span class="member-rank">Deltagrammer, Artist and Art Corona</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/piceratops-ultimate.png" alt="Fi fi fo fum avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_4157025907581241548995475" class="member-name" target="_blank">Fi fi fo fum</a>
+					</div>
+					<span class="member-rank">Deltagrammer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/stelly-yellow.svg" alt="Lettuce the Great Parrot avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_5269884588402240227278291" class="member-name member-name-compact" target="_blank">Lettuce the Great Parrot🥨🦜</a>
+					</div>
+					<span class="member-rank">Deltagrammer, Brainstormer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/leaf-grey.png" alt="Akh avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_8259026998720596700468501" class="member-name" target="_blank">Akh</a>
+					</div>
+					<span class="member-rank">Sigma-deltagrammer, Developer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/robot_male_2.png" alt="Shadow avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_4815615438153162796364791" class="member-name" target="_blank">Shadow</a>
+					</div>
+					<span class="member-rank">Alpha coder, Brainstormer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/aqualine-ultimate.png" alt="Rain avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_568053311456555725201444/discussion" class="member-name" target="_blank">ℝ𝕒𝕚𝕟</a>
+					</div>
+					<p class="member-bio">Life is like a circle. Every point is both a start & an end -"touching spirit Bear"</p>
+					<span class="member-rank">Proto-omnicronner, Head Brainstormer & HTML Builder and Admin</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/mr-pants-with-hat.png" alt="Robby avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_920868423400462856988019" class="member-name" target="_blank">Robby</a>
+					</div>
+					<p class="member-bio">My name's Robby and I am in eighth grade. I love Jesus, fishing, sports like football, basketball, and track.</p>
+					<span class="member-rank">Pro-alpha coder, Developer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/stelly-green.svg" alt="Exospacer avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_379384843910705248659233" class="member-name" target="_blank">Exospacer</a>
+					</div>
+					<span class="member-rank">Alpha coder, Brainstormer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/sneak-peak-green.svg" alt="justLord avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_2866649053533900543633356" class="member-name" target="_blank">justLord</a>
+					</div>
+					<p class="member-bio">I am a homeschooled 8th grader and member of The Omega Primes
+						that enjoys reading, taking stuff apart, playing Professor Layton, and watching "The Batman", Star Wars, and building.</p>
+					<span class="member-rank">Pro-alpha coder, Developer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/starky-sapling.png" alt="Panther Programming avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_795965110490702775202532" class="member-name" target="_blank">Panther Programming</a>
+					</div>
+					<span class="member-rank">Deltagrammer, Developer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/aqualine-ultimate.png" alt="BorbonBaseball17 avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_12292242763670672864943" class="member-name" target="_blank">BorbonBaseball17</a>
+					</div>
+					<span class="member-rank">Pro-alpha coder, Developer</span>
+				</li>
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/starky-sapling.png" alt="caleb.catt avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_413575084497159272792117" class="member-name" target="_blank">caleb.catt</a>
+					</div>
+					<span class="member-rank">Deltagrammer, Developer</span>
+				</li>
+
+				<!--<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Cool.png" alt="Hedwig avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_683269329038607171911600" class="member-name" target="_blank">Hedwig</a>
+						<p class="member-bio">Are you a dream of the universe?</p>
+					</div>
+					<span class="member-rank">Omicronner, Pro-admin</span>
+				</li> My banned alt T-T-->
+
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/duskpin-sapling.png" alt="ShadowWolf avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_5419376739822870686076798" class="member-name" target="_blank">ShadowWolf</a>
+					</div>
+					<span class="member-rank">Deltagrammer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/blobby-blue.svg" alt="Josephine avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_878332344750460734130956" class="member-name" target="_blank">Josephine❤</a>
+						<p class="member-bio">hi, I love drawing, and I'm a friend of CobraLily, and Lucky Cat, and I'm bad at grammar, BYE!!!!! (and I have a bird named snowy benjamen)</p>
+					</div>
+					<span class="member-rank">Pro-alpha coder</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/boggle-blue.svg" alt="GᴀʟᴀxʏRᴀɴɢᴇʀ avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_574576985099042639713735" class="member-name" target="_blank">GᴀʟᴀxʏRᴀɴɢᴇʀ</a>
+					</div>
+					<p class="member-bio"> Super busy. not online much anymore... | studying for the ACT | searching for collages to go to...</p>
+					<span class="member-rank">Omicronner, ProccesingJS Co-leader</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Cool.png" alt="ϮԋϵϾԋᴉͼҝϵлѪαϟϯϵπ avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_336838091572425251271773/" class="member-name" target="_blank">ϮԋϵϾԋᴉͼҝϵлѪαϟϯϵπ</a>
+						<p class="member-bio">I'm a Christian, homeschooled PADI certified diver and a member of the Arcanum and Omega Primes. I enjoy reading, drumming, fencing, and a good bowl of oatmeal.</p>
+					</div>
+					<span class="member-rank">Pro-deltagrammer, Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/marcimus-red.svg" alt="Fluffy avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_434226319389036660332874" class="member-name" target="_blank">Fluffy (≖⩊≖)</a>
+					</div>
+					<p class="member-bio">Fluffy came from planet floof and Fluffy's spaceship crashed down on planet khan. now Fluffy is here to assist people! :3</p>
+					<span class="member-rank">Pro-alpha coder, Helper</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/blobby-blue.svg" alt="Potato avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_3116983650384432048362338" class="member-name" target="_blank">Potato</a>
+					</div>
+					<span class="member-rank">Deltagrammer, Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/leaf-blue.svg" alt="XY DoubleDragon avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_673379478418208299331397" class="member-name" target="_blank">XY Double Dragon</a>
+					</div>
+					<p class="member-bio">Universal Question:Who am I? Where am I? What am I doing here?</p>
+					<span class="member-rank">Alpha coder, Artist</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/aqualine-tree.png" alt="Blueburst avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_216276079253098825743247" class="member-name" target="_blank">Blueburst</a>
+					</div>
+					<p class="member-bio">Don’t you dare underestimate the power of your own instinct, but remember that collaboration multiplies that power.</p>
+					<span class="member-rank">Pro-alpha coder, Helper</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/piceratops-ultimate.png" alt="DS avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_466731574472354573012698" class="member-name" target="_blank">Dragon Studios 🐉 🐦🔥 🐍🐉 🐦
+						</a>
+					</div>
+					<p class="member-bio">#morethan700votes! #2timesintop5 #TeamofthePhoenix #DragonGuild #DragonflyCoders #KACodingLeague #codingisawesome #Imakepeoplesubpages #timetomakeanothergame
+					</p>
+					<span class="member-rank">Sigma-Deltagrammer, Animation Origo and Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/starky-seedling.png" alt="Ikorac avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_521789616340270471323300" class="member-name" target="_blank">Ikorac🔥</a>
+					</div>
+					<p class="member-bio">I discovered coding on here, and it's what I do most days. Proud member of Team Omega Primes, I know only JS, but want to learn HTML #Artificial IntelligenceSux
+					</p>
+					<span class="member-rank">Omnicronner, Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/boggle-green.svg" alt="Anonymous avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_250216876308675101675883" class="member-name" target="_blank">Anonymous</a>
+					</div>
+					<p class="member-bio">Error 404: User not found</p>
+					<span class="member-rank">Deltagrammer, Brainstormer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/starky-tree.png" alt="Ϊ∯Λ∀ΞΠΘΠΛ₼Ξ avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_874151668702033138605965" class="member-name" target="_blank">Ϊ∯Λ∀ΞΠΘΠΛ₼Ξ</a>
+					</div>
+					<p class="member-bio">"life is harder than life sometimes. And life makes about as much sense as that sentence." - Alexzandar Timeworth
+					</p>
+					<span class="member-rank">Pro-Deltagrammer, Python Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/starky-ultimate.png" alt="SWΛNKYᴍᴀɴ avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_82898098000024228278987" class="member-name" target="_blank">SWΛNKYᴍᴀɴ</a>
+					</div>
+					<p class="member-bio">#UnbanImages | Lol did KA just make a Flag option for AI XD
+					</p>
+					<span class="member-rank">Omnicronner, Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/marcimus.svg" alt="FancyBoy avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_11723974790906369778068" class="member-name" target="_blank">FancyBoy</a>
+					</div>
+					<p class="member-bio">I like learning!</p>
+					<span class="member-rank">Pro-alpha coder, Helper</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/cacteye-blue.svg" alt="Outlaw avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_1064356485606826595644168" class="member-name" target="_blank">ᵀʰᵉΘUTLΛϢ𐚁</a>
+					</div>
+					<p class="member-bio">@TheOutlaw|FormerlyERROR|ChristIsKing|TOTP!|OneNationUnderGod| #Homeschoolers|40+Votes|WWJD|GodBlessTheUSA|#StarblastIsFun| Pew Pew Pew|#blessed</p>
+					<span class="member-rank">Pro-alpha coder, Brainstormer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/BabyWinston.png" alt="WolfGames avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_740456256481154672993062" class="member-name" target="_blank">Wolf Games</a>
+					</div>
+					<span class="member-rank">Proto-omnicronner, Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/duskpin-tree.png" alt="CharlesMartel avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_250162045152818775674843" class="member-name" target="_blank">Charles Martel</a>
+					</div>
+					<span class="member-rank">Omnicronner, Developer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/blobby-green.svg" alt="-_- avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_491886063823612614126238" class="member-name" target="_blank">Jellyfoxian</a>
+					</div>
+					<span class="member-rank">Alpha Coder, Helper</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/images/avatars/svg/blobby-blue.svg" alt="Ryanboylol avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_197436590173478627753490" class="member-name" target="_blank">Ryanand243others
+						</a>
+					</div>
+					<span class="member-rank">Alpha Coder, Braintormer</span>
+				</li>
+				<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/leaf-grey.png" alt="spade avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_905016755729923331163856" class="member-name" target="_blank">♤𝐒𝐩𝐚𝐝𝐞♤</a>
+					</div>
+					<span class="member-rank">Pro-deltagrammer, Developer</span>
+					<p class="member-bio">"Forgiveness, is the attribute of the strong" - Charlie Kirk</p>
+				</li>
+				<!--<li>
+					<img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/aqualine-ultimate.png" alt="spade avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_659556411000506996362538" class="member-name" target="_blank">Valjet</a>
+					</div>
+					<span class="member-rank">Pro-alpha coder, Brainstormer</span>
+					<p class="member-bio">
+						Musician, graphic designer, future counselor. "So put me on a highway/ And show me a sign/ And take it to the limit/ One more time" — The Eagles
+					</p> by valjet or sultan 101
+				</li>-->
+				<li><img src="https://www.khanacademy.org/computer-programming/greenfroggy64s-logo/4817821694017536/4604600374640640.png" alt="spade avatar">
+					<div class="member-main">
+						<a href="https://www.khanacademy.org/profile/kaid_975241023347256277598232" class="member-name" target="_blank">GreenFroggy64</a>
+					</div>
+					<span class="member-rank">Omnicronner, Developer</span>
+					<p class="member-bio">
+					A programmer with experience in HTML, CSS, Javascript, and C++. Likes game development, especially 3D games. Github: ThatCodingFrog
+					</p>
+				</li>
 			</ul>
-		</div>
+		</div><!--Members-->
+
+
+		<div class="info scrolling-left" id="join">
+			<h1>How to Join</h1>
+			<h2>Application Template</h2>
+			<div>
+				<div class="join-field">
+					<span class="join-label">Nickname:</span>
+					<input class="join-input" id="join-nickname" type="text" list="join-nickname-list" placeholder="Your nickname" autocomplete="off">
+					<datalist id="join-nickname-list">
+						<option value="Winston"></option>
+						<option value="Pamela"></option>
+						<option value="Piceratops"></option>
+						<option value="Ash"></option>
+						<option value="Mew"></option>
+						<option value="Salazar"></option>
+						<option value="X."></option>
+						<option value="I will be suprised if you choose one of these."></option>
+					</datalist>
+				</div>
+				<div class="join-field">
+					<span class="join-label">Primary languages/tools:</span>
+					<input class="join-input" id="join-langs" type="text" list="join-langs-list" placeholder="e.g., JS, Python, HTML/CSS" autocomplete="off">
+					<datalist id="join-langs-list">
+						<option value="JavaScript"></option>
+						<option value="Python"></option>
+						<option value="HTML/CSS"></option>
+						<option value="C++"></option>
+						<option value="SQL"></option>
+					</datalist>
+				</div>
+				<div class="join-field">
+					<span class="join-label">Reason for joining:</span>
+					<input class="join-input" id="join-reason" type="text" list="join-reason-list" placeholder="Why you want to join" autocomplete="off">
+					<datalist id="join-reason-list">
+						<option value="I like your team"></option>
+						<option value="I want to learn with other coders"></option>
+						<option value="I want to improve my programming skills"></option>
+						<option value="I want to help with projects and debugging"></option>
+						<option value="I enjoy coding contests and teamwork"></option>
+					</datalist>
+				</div>
+				<div class="join-field">
+					<span class="join-label">Link to your best project:</span>
+					<input class="join-input" id="join-project" type="url" list="join-project-list" placeholder="Your Best Project Here" autocomplete="off">
+					<datalist id="join-project-list">
+						<option value="https://www.khanacademy.org/computer-programming/Your-projects-name/your-project-number"></option>
+					</datalist>
+				</div>
+				<div class="join-field">
+					<span class="join-label">Role interest (Developer/Debugger/Brainstormer):</span>
+					<input class="join-input" id="join-role" type="text" list="join-role-list" placeholder="Role" autocomplete="off">
+					<datalist id="join-role-list">
+						<option value="Developer"></option>
+						<option value="Debugger"></option>
+						<option value="Brainstormer"></option>
+						<option value="Designer"></option>
+						<option value="Helper"></option>
+					</datalist>
+				</div>
+				<div class="join-actions">
+					<button class="buttonn" id="join-generate">
+						<div class="outline"></div>
+						<div class="state state--default">
+							<div class="icon">
+								<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63ZM7.63988 7.03001C4.85988 7.96001 3.86988 9.06001 3.86988 9.78001C3.86988 10.5 4.85988 11.6 7.63988 12.52L10.1599 13.36C10.3799 13.43 10.5599 13.61 10.6299 13.83L11.4699 16.35C12.3899 19.13 13.4999 20.12 14.2199 20.12C14.9399 20.12 16.0399 19.13 16.9699 16.35L19.7999 7.86001C20.3099 6.32001 20.2199 5.06001 19.5699 4.41001C18.9199 3.76001 17.6599 3.68001 16.1299 4.19001L7.63988 7.03001Z" fill="currentColor"></path>
+									<path d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z" fill="currentColor"></path>
+								</svg>
+							</div>
+							<p>
+								<span>G</span>
+								<span>e</span>
+								<span>n</span>
+								<span>e</span>
+								<span>r</span>
+								<span>a</span>
+								<span>t</span>
+								<span>e</span>
+							</p>
+						</div>
+						<div class="state state--sent">
+							<div class="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1em" width="1em">
+									<path fill="currentColor" d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"></path>
+									<path fill="currentColor" d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z"></path>
+								</svg>
+							</div>
+							<p>
+								<span>G</span>
+								<span>e</span>
+								<span>n</span>
+								<span>e</span>
+								<span>r</span>
+								<span>a</span>
+								<span>t</span>
+								<span>e</span>
+								<span>d</span>
+							</p>
+						</div>
+					</button>
+					<button class="buttonn" id="join-copy">
+						<div class="outline"></div>
+						<div class="state state--default">
+							<div class="icon">
+								<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" fill="currentColor" />
+								</svg>
+							</div>
+							<p>
+								<span>C</span>
+								<span>o</span>
+								<span>p</span>
+								<span>y</span>
+							</p>
+						</div>
+						<div class="state state--sent">
+							<div class="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1em" width="1em">
+									<path fill="currentColor" d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"></path>
+									<path fill="currentColor" d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z"></path>
+								</svg>
+							</div>
+							<p>
+								<span>C</span>
+								<span>o</span>
+								<span>p</span>
+								<span>i</span>
+								<span>e</span>
+								<span>d</span>
+							</p>
+						</div>
+					</button>
+				</div>
+				<div id="join-msg" class="join-msg"></div>
+				<pre id="text"></pre>
+				<textarea id="hidden" style="position: fixed; top: -1000px; left: -1000px; opacity: 0;" aria-hidden="true"></textarea>
+			</div>
+			<p>After posting, wait for an admin to review your coding level and approve your membership.</p>
+			<p>An admin will decide your coding level.</p>
+			<h2>Coding Levels</h2>
+			<p>These coding levels determine your programming skill progress in Team Omega Primes.</p>
+			<h3>Alpha Coder</h3>
+			<p>Alpha coders have basic skill and may need assistance from more advanced programmers.</p>
+			<h3>Pro-alpha coder</h3>
+			<p>Pro-alpha coders are improving quickly and can complete small-to-medium tasks more independently.</p>
+			<h3>Deltagrammer</h3>
+			<p>Deltagrammers are capable and can build many projects with little or no assistance.</p>
+			<h3>Pro-deltagrammer</h3>
+			<p>Pro-deltagrammers are strong contributors who consistently deliver reliable coding work.</p>
+			<h3>Sigma-deltagrammer</h3>
+			<p>Sigma-deltagrammers are high-level coders trusted with harder tasks and advanced teamwork.</p>
+			<h3>Proto-omicronner</h3>
+			<p>Proto-omicronners are near-top coders who are preparing for full omicronner responsibility.</p>
+			<h3>Omicronner</h3>
+			<p>Omicronners are advanced and highly skilled programmers who help guide less advanced members.</p>
+			<h3>Special Rank Ladder</h3>
+			<p>After Omicronner, leadership and admin titles continue as: Co-leader/head, Leader/Head, Pro-admin, Admin, and Omega Prime.</p>
+			<br>
+			<p>Do not be afraid to ask for help, even if you are an Omicronner!</p>
+			<br>
+			<h2>Other Ranks</h2>
+			<h3>Brainstorming Leader</h3>
+			<p>The Brainstorming Leader title is awarded to a member who consistently contributes exceptional creativity, strong ideas, and imaginative thinking. This position is currently held by <a href="https://www.khanacademy.org/profile/kaid_568053311456555725201444/discussion">ℝ𝕒𝕚𝕟</a>.</p><br>
+			<h3>Processing JS Head</h3>
+			<p>The Processing JS Head title is reserved for a highly skilled, productive, and dependable programmer with strong Processing JS experience. This position is currently held by <a href="https://www.khanacademy.org/profile/kaid_578661680921733406040161">DebugRanger</a>.</p><br>
+			<h3>Co-Processing JS Leader</h3>
+			<p>The Co-Processing JS Leader supports Processing JS leadership and recognizes strong ability and continued contribution in that area. This position is currently held by <a href="https://www.khanacademy.org/profile/kaid_574576985099042639713735">GᴀʟᴀxʏRᴀɴɢᴇʀ</a>. His main flaw is limited activity.</p><br>
+			<h3>HTML/CSS Hyperion</h3>
+			<p>The HTML/CSS Hyperion rank is given to a member who helps improve the homepage and demonstrates strong HTML and CSS knowledge, consistency, and responsibility. This position is currently held by <a href="https://www.khanacademy.org/profile/kaid_683269329038607171911600">Hooray X.</a>.</p><br>
+			<h3>Python Omega</h3>
+			<p>The Python Omega title is intended for a member with outstanding Python ability and a strong record of high-quality work. This position belongs to our leader - <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529">TorrentForce</a>!</p><br>
+			<h3>Art Corona</h3>
+			<p>The Art Corona is gave to an active and supportive graphics artist. He or she must have a history of memorial artworks in his or her profile. This position belongs to <a href="https://www.khanacademy.org/profile/kaid_829234581759719945657916">PinkCatSoda</a>.</p><br>
+			<h3>HTML Builder</h3>
+			<p>The HTML Builder is a rank for another member that is good at HTML and can be used instead of HTM/CSS Hyperion when he is unavailable.This rank is currently under the ownership of <a href="https://www.khanacademy.org/profile/kaid_4157025907581241548995475">Fi fi fo fum</a>.</p><br>
+			<h3>Animation Origo</h3>
+			<p>The Animation Origo makes animations in HTML/Pjs for the teams needs. He or she must prove themselves proficient of the title. This animator is <a href="https://www.khanacademy.org/profile/kaid_466731574472354573012698">Dragon Studios 🐉 🐦🔥 🐍</a>.</p><br>
+			<h3>Project Inspector</h3>
+			<p>The Project Inspector inspects projects member made for bugs and fixes.He/She also decides if a certain program or joining time margin is enough for a members rank up to pro-admin. This person is none other than <a href="https://www.khanacademy.org/profile/kaid_677611614554857766314873">MMS Matthew360</a>.</p><br>
+			<h2>Frequently Asked Questions</h2>
+			<h3>Can anyone join Team Omega Primes?</h3>
+			<p><strong>Answer:</strong> YES! Anyone, at any skill level, can join Team Omega Primes!</p>
+			<h3>How do I become an admin?</h3>
+			<p><strong>Answer:</strong> To become an admin, you have to be picked by the Omega Prime (<a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a>).<br> Admins have to be hard-working, sociable, and active. <br><strong>Current Admins:</strong> <a href="https://www.khanacademy.org/profile/kaid_677611614554857766314873">MMS (Matthew360°)</a>, <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a> and <a href="https://www.khanacademy.org/profile/kaid_568053311456555725201444/discussion">ℝ𝕒𝕚𝕟</a>.</p><!-- Hooray X. is not sociable tho -->
+			<h3>Can anyone become the Omega Prime?</h3>
+			<p><strong>Answer:</strong> No. The rank "Omega Prime" is reserved to the founder of the team. However, you can still become an admin!</p>
+		</div><!--Join-->
+
+		<script type>
+			window.addEventListener('DOMContentLoaded', function() {
+				var jn = document.getElementById('join-nickname')
+				var jl = document.getElementById('join-langs')
+				var jr = document.getElementById('join-reason')
+				var jp = document.getElementById('join-project')
+				var jrole = document.getElementById('join-role')
+				var jout = document.getElementById('text')
+				var jgen = document.getElementById('join-generate')
+				var jcopy = document.getElementById('join-copy')
+				var jmsg = document.getElementById('join-msg')
+				if (jcopy) {
+					jcopy.disabled = true
+				}
+
+				function isValidUrl(u) {
+					if (!u) return false;
+					var s = u.trim().toLowerCase();
+					return s.startsWith('http') && s.indexOf('khanacademy.org') !== -1
+				}
+
+				function mark(el, ok) {
+					if (!el) return;
+					el.classList[ok ? 'remove' : 'add']('join-invalid')
+				}
+
+				function updateFilled(el) {
+					if (!el) return;
+					el.classList[el.value.trim().length > 0 ? 'add' : 'remove']('join-filled')
+				}
+
+				function notify(msg) {
+					try {
+						window.alert(msg)
+					} catch (e) {}
+				}
+
+				function animateButtonState(button, className, duration) {
+					if (!button) return
+					button.classList.remove(className)
+					void button.offsetWidth
+					button.classList.add(className)
+					if (duration) {
+						window.setTimeout(function() {
+							button.classList.remove(className)
+						}, duration)
+					}
+				}
+
+				function allValid() {
+					var n = jn && jn.value.trim().length > 0
+					var l = jl && jl.value.trim().length > 0
+					var r = jr && jr.value.trim().length > 0
+					var p = jp && isValidUrl(jp.value)
+					var ro = jrole && jrole.value.trim().length > 0
+					mark(jn, n);
+					mark(jl, l);
+					mark(jr, r);
+					mark(jp, p);
+					mark(jrole, ro)
+					if (jmsg) {
+						jmsg.textContent = (n && l && r && p && ro) ? "" : "Fill all fields and use a Khan Academy project link"
+					}
+					return n && l && r && p && ro
+				}
+
+				function gen(show) {
+					updateFilled(jn)
+					updateFilled(jl)
+					updateFilled(jr)
+					updateFilled(jp)
+					updateFilled(jrole)
+					var t = 'Application Template\n\n' +
+						'Nickname: ' + (jn ? jn.value.trim() : '') + '\n\n' +
+						'Primary languages/tools: ' + (jl ? jl.value.trim() : '') + '\n\n' +
+						'Reason for joining:\n' + (jr ? jr.value.trim() : '') + '\n\n' +
+						'Link to your best project: ' + (jp ? jp.value.trim() : '') + '\n\n' +
+						'Role interest: ' + (jrole ? jrole.value.trim() : '')
+					if (jout) {
+						jout.textContent = t
+					}
+					if (show && jout) {
+						var sp = (typeof showPanel === 'function')
+						if (sp) {
+							showPanel('join')
+						}
+						jout.classList.add('show')
+						try {
+							jout.scrollIntoView({
+								behavior: 'smooth',
+								block: 'center'
+							})
+						} catch (e) {}
+					}
+					var txt = jout ? jout.textContent.trim() : ''
+					if (jcopy) {
+						if (txt.length > 0) {
+							jcopy.disabled = false
+						} else {
+							jcopy.disabled = true
+						}
+					}
+					if (show && jgen) {
+						animateButtonState(jgen, 'generated', 1800)
+					}
+				}
+
+				function copyText() {
+					var el = document.getElementById('text')
+					var t = el && el.innerText ? el.innerText.trim() : ''
+					if (t.length === 0) {
+						notify('Nothing to copy')
+						throw new Error('copy failed')
+					}
+
+					function success() {
+						try {
+							animateButtonState(jcopy, 'copied', 1800)
+							notify('Copied to clipboard!')
+						} catch (e) {}
+					}
+
+					function fail() {
+						notify('Copy failed')
+						throw new Error('copy failed')
+					}
+					var copyArea = document.getElementById('hidden')
+					if (!copyArea) {
+						fail();
+						return Promise.reject(new Error('copy failed'))
+					}
+					copyArea.value = t
+					copyArea.focus()
+					copyArea.select()
+					var ok = false
+					try {
+						ok = document.execCommand('copy')
+					} catch (e) {}
+					if (ok) {
+						success();
+						return Promise.resolve()
+					} else {
+						fail();
+						return Promise.reject(new Error('copy failed'))
+					}
+				}
+				if (jgen) {
+					jgen.addEventListener('click', function() {
+						gen(true)
+					})
+				}
+				if (jcopy) {
+					jcopy.addEventListener('click', function() {
+						copyText()
+					})
+				}
+				['input', 'change'].forEach(function(ev) {
+					if (jn) jn.addEventListener(ev, function() {
+						gen(false)
+					})
+					if (jl) jl.addEventListener(ev, function() {
+						gen(false)
+					})
+					if (jr) jr.addEventListener(ev, function() {
+						gen(false)
+					})
+					if (jp) jp.addEventListener(ev, function() {
+						gen(false)
+					})
+					if (jrole) jrole.addEventListener(ev, function() {
+						gen(false)
+					})
+				})
+				gen(false)
+			})
+		</script>
+		<!--<button id="play">Play Music</button>
+<script src="https://cdn.jsdelivr.net/gh/Vectopedia/music@80e053de176b29783b84bcff8a06eb1ead25c512/sine.js"></script>
+    <script>
+      var playing = false, buffer, context = new (AudioContext || webkitAudioContext)(),
+      analyser = context.createAnalyser(), string = atob(data), array = new Uint8Array(string.length);
+      analyser.fftSize = 256;
+      for (var index = 0; index < string.length; index++) {
+        array[index] = string.charCodeAt(index);
+      }
+      context.decodeAudioData(array.buffer, function(_buffer) {
+        buffer = _buffer;
+      }, function(error) {
+        console.error("Failed to decode audio data: " + error);
+      });
+      document.getElementById("play").onclick = function() {
+        if (!playing) {
+          var source = context.createBufferSource();
+          source.buffer = buffer;
+          source.connect(analyser);
+          analyser.connect(context.destination);
+          source.start();
+        }
+        playing = true;
+        setTimeout(function() {
+          playing = false;
+        }, buffer.duration * 1000);
+      };
+    </script>-->
+		<script>
+			function showContent() {
+				document.getElementById('intro').style.display = 'none';
+				document.getElementById('main-content').style.display = 'block';
+			}
+
+			window.addEventListener('DOMContentLoaded', function() {
+				var memberItems = document.querySelectorAll('.member-grid li');
+				memberItems.forEach(function(item) {
+					var card = item.querySelector('.member-main');
+					if (!card) return;
+					var bio = card.querySelector('.member-bio');
+					if (bio) {
+						var bioText = bio.textContent.replace(/\u00a0/g, '').trim();
+						if (!bioText) {
+							bio.remove();
+						} else {
+							var rank = item.querySelector('.member-rank');
+							if (rank && bio.parentElement === card) {
+								item.insertBefore(bio, rank.nextSibling);
+							}
+						}
+					}
+				});
+
+				var memberGrid = document.getElementById('member-grid');
+				var memberSort = document.getElementById('member-sort');
+				if (memberGrid && memberSort) {
+					var originalMemberItems = Array.prototype.slice.call(memberGrid.querySelectorAll('li'));
+					var originalOrder = new Map();
+
+					originalMemberItems.forEach(function(item, index) {
+						originalOrder.set(item, index);
+					});
+
+					function normalizeSortText(value) {
+						return (value || '')
+							.toLowerCase()
+							.normalize('NFD')
+							.replace(/[\u0300-\u036f]/g, '');
+					}
+
+					function getMemberName(item) {
+						var link = item.querySelector('.member-name');
+						return link ? link.textContent.trim() : '';
+					}
+
+					function getMemberRank(item) {
+						var rank = item.querySelector('.member-rank');
+						return rank ? rank.textContent.trim() : '';
+					}
+
+					function getRankParts(rankText) {
+						var parts = (rankText || '').split(',');
+						var secondaryParts = parts.slice(1).map(function(part) {
+							return normalizeSortText(part);
+						}).filter(function(part) {
+							return part.length > 0;
+						});
+						return {
+							primary: normalizeSortText(parts[0] || ''),
+							secondary: normalizeSortText(parts.slice(1).join(',') || ''),
+							secondaryParts: secondaryParts
+						};
+					}
+
+					function getCodingLevelOrder(rankText) {
+						var primary = getRankParts(rankText).primary;
+						if (primary.indexOf('proto-omicronner') !== -1) return 70;
+						if (primary.indexOf('omicron') !== -1 || primary.indexOf('omnicron') !== -1) return 60;
+						if (primary.indexOf('sigma-deltagrammer') !== -1) return 50;
+						if (primary.indexOf('pro-deltagrammer') !== -1) return 40;
+						if (primary.indexOf('deltagrammer') !== -1) return 30;
+						if (primary.indexOf('pro-alpha coder') !== -1) return 20;
+						if (primary.indexOf('alpha coder') !== -1) return 10;
+						return 0;
+					}
+
+					function hasRecognizedRank(rankText) {
+						return getCodingLevelOrder(rankText) > 0 || getStaffRankOrder(rankText) > 0;
+					}
+
+					function secondaryHas(rankText, variants) {
+						var parts = getRankParts(rankText).secondaryParts;
+						return variants.some(function(variant) {
+							return parts.some(function(part) {
+								return part.indexOf(variant) !== -1;
+							});
+						});
+					}
+
+					function getStaffRankOrder(rankText) {
+						var secondary = getRankParts(rankText).secondary;
+						if (secondary.indexOf('omega prime') !== -1) return 120;
+						if (secondaryHas(rankText, ['admin']) && !secondaryHas(rankText, ['pro-admin'])) return 110;
+						if (secondaryHas(rankText, ['pro-admin'])) return 100;
+						if (secondaryHas(rankText, ['leader/head', 'brainstormer leader', 'brainstormer head', 'head brainstormer', 'processingjs leader', 'processing js leader', 'proccesingjs leader', 'proccesing js leader', 'pjs head', 'Art Corona', 'art corona', 'Project Inspector', 'project inspector'])) return 90;
+						if (secondaryHas(rankText, ['co-leader', 'co-processing js leader', 'co pjs leader', 'processingjs co-leader', 'processing js co-leader', 'proccesingjs co-leader', 'proccesing js co-leader', 'html builder', 'HTML Builder', 'Animation Origo', 'animation origo'])) return 80;
+						return 0;
+					}
+
+					function getRoleOrder(rankText) {
+						var secondary = getRankParts(rankText).secondary;
+						if (secondary.indexOf('python developer') !== -1) return 60;
+						if (secondary.indexOf('developer') !== -1) return 55;
+						if (secondary.indexOf('animator') !== -1) return 50;
+						if (secondary.indexOf('brainstormer') !== -1) return 45;
+						if (secondary.indexOf('artist') !== -1) return 40;
+						if (secondary.indexOf('helper') !== -1) return 30;
+						return 0;
+					}
+
+					function getRankOrder(rankText) {
+						if (!hasRecognizedRank(rankText)) {
+							return -1;
+						}
+						var staffOrder = getStaffRankOrder(rankText);
+						var roleOrder = getRoleOrder(rankText);
+						var codingLevelOrder = getCodingLevelOrder(rankText);
+						if (staffOrder) {
+							return 2000000 + staffOrder * 10000 + codingLevelOrder * 100 + roleOrder;
+						}
+						return codingLevelOrder * 100 + roleOrder;
+					}
+
+					function compareDefault(a, b) {
+						return originalOrder.get(a) - originalOrder.get(b);
+					}
+
+					function sortMembers() {
+						var mode = memberSort.value;
+						var items = originalMemberItems.slice();
+
+						items.sort(function(a, b) {
+							var nameA = normalizeSortText(getMemberName(a));
+							var nameB = normalizeSortText(getMemberName(b));
+							var rankA = getMemberRank(a);
+							var rankB = getMemberRank(b);
+
+							if (mode === 'alphabetical') {
+								return nameA.localeCompare(nameB) || compareDefault(a, b);
+							}
+
+							if (mode === 'level') {
+								var hasRankA = hasRecognizedRank(rankA);
+								var hasRankB = hasRecognizedRank(rankB);
+								if (hasRankA !== hasRankB) {
+									return hasRankB - hasRankA;
+								}
+								return getCodingLevelOrder(rankB) - getCodingLevelOrder(rankA) ||
+									getRoleOrder(rankB) - getRoleOrder(rankA) ||
+									nameA.localeCompare(nameB) ||
+									compareDefault(a, b);
+							}
+
+							if (mode === 'rank') {
+								return getRankOrder(rankB) - getRankOrder(rankA) ||
+									getRoleOrder(rankB) - getRoleOrder(rankA) ||
+									getCodingLevelOrder(rankB) - getCodingLevelOrder(rankA) ||
+									nameA.localeCompare(nameB) ||
+									compareDefault(a, b);
+							}
+
+							return compareDefault(a, b);
+						});
+
+						items.forEach(function(item) {
+							memberGrid.appendChild(item);
+						});
+					}
+
+					memberSort.addEventListener('change', sortMembers);
+					sortMembers();
+				}
+
+				var backgroundSets = {
+					'Ice Giants': [
+						'https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg',
+						'https://upload.wikimedia.org/wikipedia/commons/d/d2/Icegiant.jpg',
+						'https://upload.wikimedia.org/wikipedia/commons/7/78/Sub-neptune.jpg',
+						'https://upload.wikimedia.org/wikipedia/commons/c/cd/Artist%27s_rendering_of_a_Neptune-type_exoplanet.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/9/9a/Super-neptune.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/8/81/Hyceanplanet.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+					],
+					'Rocky Planets': [
+						'https://upload.wikimedia.org/wikipedia/commons/7/78/Toroidalplanet.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg',
+
+						'https://upload.wikimedia.org/wikipedia/commons/9/95/Rogueplanet.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/2/26/Terrestrialplanet.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/b/b7/Chthonianplanet.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+
+						'https://upload.wikimedia.org/wikipedia/commons/a/a1/Artist%E2%80%99s_impression_of_Proxima_d_%28wider_view%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/5/51/Proxima_Centauri_b_%2829196109016%29.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/6/67/Artist%E2%80%99s_impression_of_Proxima_d_%28close-up%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+					],
+					'Gas Giants': [
+						'https://upload.wikimedia.org/wikipedia/commons/e/ec/Ammonia_clouds_gas_giant.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/7/71/Class-v_cubicapoc.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/a/ae/Gasgiant.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/9/95/Blue_Ringed_Gas_Giant_%2813879196965%29.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/e/ed/Jupiter-like_planet_with_a_red_dwarf_star.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/c/cd/Artist%27s_rendering_of_a_Neptune-type_exoplanet.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+					],
+					'Stars and Nebula': [
+						'https://upload.wikimedia.org/wikipedia/commons/e/ed/Jupiter-like_planet_with_a_red_dwarf_star.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/b/b3/Artist_impression_of_ultra_fluffy_gas_giant_planet_orbiting_a_red_dwarf_star.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/b/bf/Black_Hole_Outflows_From_Centaurus_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+						'https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg',
+						'https://upload.wikimedia.org/wikipedia/commons/9/99/PIA03149_-_Sirius_A_and_B_Hubble_photo.jpg',
+
+					]
+				};
+				var backgroundModes = ['Ice Giants', 'Rocky Planets', 'Gas Giants', 'Stars and Nebula'];
+				var backgroundModeEmojis = {
+					'Ice Giants': '❄',
+					'Rocky Planets': '⬢',
+					'Gas Giants': '◎',
+					'Stars and Nebula': '✦'
+				};
+				var currentBackgroundModeIndex = 0;
+				var backgrounds = backgroundSets[backgroundModes[currentBackgroundModeIndex]];
+				var backgroundIndex = 0;
+				var overlay = 'linear-gradient(rgba(5, 11, 20, 0.35), rgba(5, 11, 20, 0.35))';
+				var layerA = document.querySelector('.background-layer-a');
+				var layerB = document.querySelector('.background-layer-b');
+				var activeLayer = layerA;
+				var inactiveLayer = layerB;
+				var backgroundSwitcher = document.getElementById('background-switcher');
+
+				function preloadBackgrounds(list) {
+					list.forEach(function(url) {
+						var img = new Image();
+						img.src = url;
+					});
+				}
+
+				function setLayerBackground(layer, index) {
+					if (!layer || !backgrounds || !backgrounds.length) return;
+					layer.style.backgroundImage = overlay + ", url('" + backgrounds[index] + "')";
+				}
+
+				function transitionToBackground(index) {
+					if (!backgrounds || !backgrounds.length) return;
+					setLayerBackground(inactiveLayer, index);
+					inactiveLayer.classList.add('active');
+					activeLayer.classList.remove('active');
+
+					var previousLayer = activeLayer;
+					activeLayer = inactiveLayer;
+					inactiveLayer = previousLayer;
+				}
+
+				function syncBackgroundButton() {
+					if (backgroundSwitcher) {
+						var currentMode = backgroundModes[currentBackgroundModeIndex];
+						var emoji = backgroundSwitcher.querySelector('.theme-emoji');
+						if (emoji) {
+							emoji.textContent = backgroundModeEmojis[currentMode] || '⭐';
+						}
+						backgroundSwitcher.setAttribute('aria-label', currentMode);
+						backgroundSwitcher.setAttribute('title', currentMode);
+					}
+				}
+
+				function applyBackgroundMode(modeIndex) {
+					currentBackgroundModeIndex = modeIndex;
+					backgrounds = backgroundSets[backgroundModes[currentBackgroundModeIndex]];
+					backgroundIndex = 0;
+					preloadBackgrounds(backgrounds);
+					transitionToBackground(backgroundIndex);
+					syncBackgroundButton();
+				}
+
+				backgroundModes.forEach(function(mode) {
+					preloadBackgrounds(backgroundSets[mode]);
+				});
+
+				if (backgroundSwitcher) {
+					backgroundSwitcher.addEventListener('click', function() {
+						var nextModeIndex = (currentBackgroundModeIndex + 1) % backgroundModes.length;
+						applyBackgroundMode(nextModeIndex);
+					});
+				}
+
+				applyBackgroundMode(currentBackgroundModeIndex);
+				setInterval(function() {
+					backgroundIndex = (backgroundIndex + 1) % backgrounds.length;
+					transitionToBackground(backgroundIndex);
+				}, 30000);
+			});
+		</script>
+
+		<div class="credit">
+			<h3>Omega Primes Credits</h3>
+			<em>
+				Original design by <a href="https://www.khanacademy.org/profile/kaid_3346337171905996578440529/">TorrentForce</a>.<br>
+				New design and numerous upgrades by <a href="https://www.khanacademy.org/profile/kaid_6399133970940964287498062">Hooray X.</a><br>
+				Join button designed by <a href="https://www.khanacademy.org/profile/kaid_568053311456555725201444/discussion">ℝ𝕒𝕚𝕟 the Great</a>.<br><br>
+				<!--Used fullscreen mode from <a href ="https://www.khanacademy.org/profile/awesomeorion">AwsomeOrion</a> so yes credit XD<br>-->
+				Check out our <a href="https://www.khanacademy.org/python-program/team-omega-primes-homepage/4692136130363392" target="_blank">Python</a> homepage!<br><br>
+				© TorrentForce and Admins, 2026. All rights reserved.
+			</em>
+		</div><!--Credits-->
 	</main>
 
-	<script>
-		const introScreen = document.getElementById('intro');
-		window.addEventListener('load', () => {
-			introScreen.style.opacity = '0';
-			introScreen.style.pointerEvents = 'none';
-		});
-	</script>
 </body>
 
 </html>
