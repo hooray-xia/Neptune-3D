@@ -299,7 +299,7 @@ Parts of the homepage were inspired by CodeX and Scriptara.
 			color: rgba(216, 251, 252, 1);
 
 		}
-    
+
 		.background-rotator {
 			position: fixed;
 			inset: 0;
@@ -2229,7 +2229,7 @@ Parts of the homepage were inspired by CodeX and Scriptara.
 					</div>
 					<span class="member-rank">Omnicronner, Developer</span>
 					<p class="member-bio">
-					A programmer with experience in HTML, CSS, Javascript, and C++. Likes game development, especially 3D games. Github: ThatCodingFrog
+						A programmer with experience in HTML, CSS, Javascript, and C++. Likes game development, especially 3D games. Github: ThatCodingFrog
 					</p>
 				</li>
 			</ul>
@@ -2919,7 +2919,114 @@ Parts of the homepage were inspired by CodeX and Scriptara.
 				}, 30000);
 			});
 		</script>
+		<!-- Import the html2canvas library -->
+		<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.min.js"></script>
 
+		<!-- Thumbnail generation script -->
+		<script>
+			var save = function() {
+				html2canvas(document.body, {
+						allowTaint: false,
+						useCORS: true,
+						width: 579,
+						height: 566,
+					})
+					.then(function(canvas) {
+						b64Img = canvas.toDataURL();
+						window.top.postMessage(b64Img, "https://www.khanacademy.org/");
+					});
+			};
+
+			var handleSave = function(e) {
+				if (JSON.parse(e.data).screenshot) {
+					setTimeout(function() {
+						console.log("Saving...");
+						save();
+					}, 1000)
+				}
+			};
+
+			window.parent.savers = window.parent.savers || 0;
+			window.parent.addEventListener('message', handleSave);
+			window.parent.savers += 1;
+			for (window.parent.savers; window.parent.savers > 1; window.parent.savers -= 1) {
+				window.parent.removeEventListener('message', handleSave)
+			}
+		</script>
+		<!-- Import the html2canvas library -->
+		<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.min.js"></script>
+
+		<!-- Thumbnail generation script -->
+		<script>
+			var save = function() {
+				html2canvas(document.body, {
+						allowTaint: false,
+						useCORS: true,
+						width: 579,
+						height: 566,
+					})
+					.then(function(canvas) {
+						b64Img = canvas.toDataURL();
+						window.top.postMessage(b64Img, "https://www.khanacademy.org/");
+					});
+			};
+
+			var handleSave = function(e) {
+				if (JSON.parse(e.data).screenshot) {
+					setTimeout(function() {
+						console.log("Saving...");
+						save();
+					}, 1000)
+				}
+			};
+
+			window.parent.savers = window.parent.savers || 0;
+			window.parent.addEventListener('message', handleSave);
+			window.parent.savers += 1;
+			for (window.parent.savers; window.parent.savers > 1; window.parent.savers -= 1) {
+				window.parent.removeEventListener('message', handleSave)
+			}
+		</script>
+		<!-- Import the html2canvas library -->
+		<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.min.js"></script>
+
+		<!-- Thumbnail generation script -->
+		<script>
+			var save = function() {
+				html2canvas(document.body, {
+						allowTaint: false,
+						useCORS: true,
+						width: 579,
+						height: 566,
+					})
+					.then(function(canvas) {
+						b64Img = canvas.toDataURL();
+						window.top.postMessage(b64Img, "https://www.khanacademy.org/");
+					});
+			};
+
+			var handleSave = function(e) {
+				if (JSON.parse(e.data).screenshot) {
+					setTimeout(function() {
+						console.log("Saving...");
+						save();
+					}, 1000)
+				}
+			};
+
+			window.parent.savers = window.parent.savers || 0;
+			window.parent.addEventListener('message', handleSave);
+			window.parent.savers += 1;
+			for (window.parent.savers; window.parent.savers > 1; window.parent.savers -= 1) {
+				window.parent.removeEventListener('message', handleSave)
+			}
+		</script>
+
+		<!-- Escape key listener to replace content for thumbnail -->
+		<script type="application/javascript">
+          // From Terratrice homepage
+          // Needs more updation
+		</script>
 		<div class="credit">
 			<h3>Omega Primes Credits</h3>
 			<em>
