@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<!--Who did what:-->
+<!--Me: Minor changes-->
+<!-- Kiaantolia: Original code so this is credit lol I hope he won't mind me  borrowing the magnificent code :D :D :D-->
+<!--AI: Breaking it when I want it to debug that dumb white square >:(-->
+<!--At the most,22 votes.-->
+<head>
+	<meta charset="utf-8">
+	<title>Neptune in Three.JS (Join T.O.P.!!! Pls)</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: rgb(0, 0, 0);
+			height: 100%;
+			width: 100%;
+		}
+
+		canvas#bg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.omega-container {
+			position: absolute;
+			left: 20px;
+			bottom: 20px;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			z-index: 100;
+			background: rgba(10, 20, 30, 0.6);
+			padding: 8px 16px 8px 8px;
+			border-radius: 50px;
+			border: 1px solid rgba(0, 240, 255, 0.2);
+			transition: transform 0.3s;
+		}
+
+		.omega-container:hover {
+			transform: scale(1.05);
+			border-color: rgba(0, 240, 255, 0.5);
+		}
+
+		.omega {
+			background: linear-gradient(135deg, hsl(230, 100%, 15%) 0%, hsl(223, 100%, 24%), hsl(218, 100%, 50%));
+			width: 45px;
+			height: 45px;
+			font-size: 2rem;
+			font-weight: bold;
+			box-shadow: 0 0 12px rgb(0, 240, 255), 0 0 24px rgb(0, 85, 255);
+			border-radius: 50%;
+			color: rgb(0, 240, 255);
+			font-family: monospace;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none;
+			transition: all 0.5s ease;
+		}
+
+		.omega:hover {
+			transform: scale(1.3);
+			filter: brightness(150%) hue-rotate(-20deg);
+		}
+
+		.join {
+			font-family: 'Orbitron', monospace;
+			color: rgb(0, 126, 158);
+			font-size: 0.9rem;
+			margin: 0;
+			letter-spacing: 2px;
+			font-weight: 700;
+			text-decoration: none;
+		}
+	</style>
+	><!--The Thumbnail Script 2.1.0 12/18/2023 by Bluebird@kaid_157624541333313939750668-->
+	<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+	<script type>
+		var r = 600,
+			s = document.documentElement.clientWidth;
+		window.parent.html2canvas = t => {
+			try {
+				html2canvas(document.body, {
+					width: s,
+					height: s,
+					useCORS: !0,
+					onclone: t => t.getAnimations().forEach((t => {
+						try {
+							t.finish()
+						} catch {}
+					}))
+				}).then((t => {
+					var e = document.createElement("canvas");
+					e.width = r, e.height = r, e.getContext("2d").drawImage(t, 0, 0, t.width, t.height, 0, 0, r, r), window.top.postMessage(e.toDataURL(), "*")
+				})).catch((t => {
+					alert("Thumbnail Script Error: " + t)
+				}))
+			} catch {
+				window.top.postMessage(document.createElement("canvas").toDataURL(), "*")
+			}
+		};
+	</script>
+</head>
+<div class="omega-container">
+	<a target="_blank" href="https://www.khanacademy.org/computer-programming/team-omega-primes-official-homepage/5100299838144512" class="omega">Ω</a>
+	<a target="_blank" href="https://www.khanacademy.org/computer-programming/team-omega-primes-official-homepage/5100299838144512" class="join">JOIN T.O.P.</a>
+</div>
+
+<body onselectstart="return false">
+	<canvas id="bg"></canvas>
+	<script type="module">
+		const cnv = document.getElementById('bg');
+		const s = new THREE.Scene();
+		s.background = new THREE.Color('rgb(0,0,0)');
+
+		const c = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+		c.position.z = 12;
+
+		const r = new THREE.WebGLRenderer({
+			canvas: cnv,
+			antialias: true,
+			preserveDrawingBuffer: true
+		});
+		r.setSize(window.innerWidth, window.innerHeight);
+		r.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+		const l = new THREE.TextureLoader();
+		l.setCrossOrigin('anonymous');
+		const nt = l.load('https://upload.wikimedia.org/wikipedia/commons/1/1e/Solarsystemscope_texture_2k_neptune.jpg');
+		const mt = l.load('https://upload.wikimedia.org/wikipedia/commons/9/9d/Neptune%E2%80%99s_Moon_Triton_Fosters_Rare_Icy_Union_%28gemini1903a%29_square.jpg');
+
+		const sg = new THREE.BufferGeometry();
+		const sc = 15000;
+		const pa = new Float32Array(sc * 3);
+		for (let i = 0; i < sc * 3; i++) pa[i] = (Math.random() - 0.5) * 200;
+		sg.setAttribute('position', new THREE.BufferAttribute(pa, 3));
+		const st = new THREE.Points(sg, new THREE.PointsMaterial({
+			size: 0.05,
+			color: new THREE.Color('rgb(255,255,255)')
+		}));
+		s.add(st);
+
+		const g = new THREE.SphereGeometry(5, 64, 64);
+		const uv = g.attributes.uv;
+		for (let i = 0; i < uv.count; i++) {
+			let u = uv.getX(i);
+			if (u > 0.5) u = 1 - u;
+			uv.setX(i, u * 2);
+		}
+		const p = new THREE.Mesh(g, new THREE.MeshStandardMaterial({
+			map: nt,
+			roughness: 0.8,
+			metalness: 0.1
+		}));
+		s.add(p);
+
+		const m = new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 32), new THREE.MeshStandardMaterial({
+			map: mt,
+			roughness: 0.9
+		}));
+		s.add(m);
+
+		s.add(new THREE.AmbientLight(new THREE.Color('rgb(255,255,255)'), 0.4));
+		const ml = new THREE.DirectionalLight(new THREE.Color('rgb(255,255,255)'), 1.0);
+		ml.position.set(5, 3, 5);
+		s.add(ml);
+		const bl = new THREE.DirectionalLight(new THREE.Color('rgb(68,119,255)'), 0.5);
+		bl.position.set(-5, -3, -5);
+		s.add(bl);
+
+		function anim() {
+			requestAnimationFrame(anim);
+			const t = Date.now() * 0.0005;
+
+			p.rotation.y += 0.002;
+			st.rotation.y += 0.0001;
+
+			m.position.x = Math.cos(t) * 10;
+			m.position.z = Math.sin(t) * 10;
+
+			r.render(s, c);
+		}
+
+		window.addEventListener('resize', () => {
+			c.aspect = window.innerWidth / window.innerHeight;
+			c.updateProjectionMatrix();
+			r.setSize(window.innerWidth, window.innerHeight);
+		});
+
+		window.addEventListener('message', e => {
+			if (e.data === 'capture') {
+				window.top.postMessage(cnv.toDataURL(), '*');
+			}
+		});
+
+		anim();
+	</script>
+	<script>
+	</script>
+</body>
+
+</html>
